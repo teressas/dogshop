@@ -5,10 +5,11 @@ import {
     ERROR,
     LOAD_PRODUCTS,
     UPDATE_PRODUCTS,
+    LOAD_PRODUCT,
     PRODUCTS_URL
 } from '../constants';
 
-export const loadProductsThunk = () => (dispatch) => {
+export const fetchProducts = () => (dispatch) => {
     dispatch(createAction(LOADING, 'loading products...'));
 
     fetch(PRODUCTS_URL)
@@ -18,7 +19,7 @@ export const loadProductsThunk = () => (dispatch) => {
             data.map(product => {
                 return products.push(product)
             })
-            dispatch(createAction(SUCCESS, 'Successfully loaded product...'));
+            dispatch(createAction(SUCCESS, 'Successfully loaded products...'));
             dispatch(createAction(LOAD_PRODUCTS, products));
         })
         .catch((err) => 
@@ -26,7 +27,19 @@ export const loadProductsThunk = () => (dispatch) => {
         );
 }
 
-export const updateProductAction = (data) => (dispatch) => {
+export const fetchProductById = (productId) => (dispatch) => {
+    dispatch(createAction(LOADING, 'loading product...'));
+    fetch(`${PRODUCTS_URL}/${productId}`)
+        .then(res => res.json())
+        .then(data => {
+            // console.log({data})
+            dispatch(createAction(SUCCESS, 'Successfully loaded product...'))
+            dispatch(createAction(LOAD_PRODUCT, data));
+        })
+        .catch(err => dispatch(createAction(ERROR, 'Issue loading product')))
+}
+
+export const updateProductById = (data) => (dispatch) => {
     if(!data) {
         return '';
     } else {

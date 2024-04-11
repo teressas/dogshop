@@ -3,7 +3,8 @@ import {
     SUCCESS,
     ERROR,
     LOAD_PRODUCTS,
-    UPDATE_PRODUCTS
+    UPDATE_PRODUCTS,
+    LOAD_PRODUCT
 } from '../constants';
 
 const defaultState = {
@@ -13,6 +14,16 @@ const defaultState = {
         message: '',
     },
     productList: [],
+    productDetails: {
+        name: '',
+        image: '',
+        description: '',
+        category: '',
+        price: 0.00,
+        countInStock: 0,
+        rating: 0.0,
+        numReviews: 0
+    },
 };
 
 const productReducer = (prevState = defaultState, action) => {
@@ -43,7 +54,10 @@ const productReducer = (prevState = defaultState, action) => {
         }
         case UPDATE_PRODUCTS: {
             return { ...prevState, productList: [ ...prevState.productList, { name: payload }] };
-        };
+        }
+        case LOAD_PRODUCT: {
+            return { ...prevState, productDetails: payload }
+        }
         default: return prevState;
     }
 }

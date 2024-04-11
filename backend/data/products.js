@@ -1,7 +1,7 @@
 const products = [
     {
         name: 'Sweet Like Honey',
-        image: '/uploads/slh_harness.jpg',
+        image: '/images/slh_harness.jpeg',
         description:
             'Sweet Like Honey dog harness',
         category: 'Harness',
@@ -12,7 +12,7 @@ const products = [
     },
     {
         name: 'Sweet Like Honey',
-        image: '/uploads/slh_collar.jpg',
+        image: '/images/slh_collar.jpeg',
         description:
             'Sweet Like Honey dog collar',
         category: 'Collar',
@@ -23,7 +23,7 @@ const products = [
     },
     {
         name: 'Sweet Like Honey',
-        image: '/uploads/slh_leash.jpg',
+        image: '/images/slh_leash.jpeg',
         description:
             'Sweet Like Honey dog leashes',
         category: 'Leashes',
@@ -34,7 +34,7 @@ const products = [
     },
     {
         name: 'Sushi Lover',
-        image: '/uploads/sl_harness.jpg',
+        image: '/images/sl_harness.jpeg',
         description:
             'Sushi Lover dog harness',
         category: 'Harness',
@@ -45,7 +45,7 @@ const products = [
     },
     {
         name: 'Sushi Lover',
-        image: '/uploads/sl_collar.jpg',
+        image: '/images/sl_collar.jpeg',
         description:
             'Sushi Lover dog collar',
         category: 'Collar',
@@ -56,7 +56,7 @@ const products = [
     },
     {
         name: 'Sushi Lover',
-        image: '/uploads/sl_leash.jpg',
+        image: '/images/sl_leash.jpeg',
         description:
             'Sushi Lover dog leashes',
         category: 'Leashes',
@@ -67,7 +67,7 @@ const products = [
     },
     {
         name: 'Daydream',
-        image: '/uploads/dd_harness.jpg',
+        image: '/images/dd_harness.jpeg',
         description:
             'Daydream dog harness',
         category: 'Harness',
@@ -78,7 +78,7 @@ const products = [
     },
     {
         name: 'Daydream',
-        image: '/uploads/dd_collar.jpg',
+        image: '/images/dd_collar.jpeg',
         description:
             'Daydream dog collar',
         category: 'Collar',
@@ -89,7 +89,7 @@ const products = [
     },
     {
         name: 'Daydream',
-        image: '/uploads/dd_leash.jpg',
+        image: '/images/dd_leash.jpeg',
         description:
             'Daydream dog leashes',
         category: 'Leashes',

@@ -29,6 +29,7 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 }
 
 userSchema.pre('save', async function (next) {
+    // if pw is not modified
     if(!this.isModified('password')) {
         next();
     }
