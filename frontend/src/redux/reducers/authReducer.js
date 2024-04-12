@@ -26,7 +26,6 @@ export const authReducer = (prevState = defaultState, action) => {
             return { ...prevState, request: { loading: false, success: false, message: payload }}
         }
         case LOGIN_USER: {
-            payload && localStorage.setItem('user', JSON.stringify(payload))
             return { ...prevState, user: {
                 id: payload._id, 
                 name: payload.name,

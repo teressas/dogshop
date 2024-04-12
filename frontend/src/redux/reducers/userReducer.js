@@ -4,6 +4,7 @@ import {
     ERROR,
     LOAD_USERS,
     UPDATE_USERS,
+    LOGIN_USER,
 } from '../constants';
 
 const defaultState = {
@@ -13,6 +14,13 @@ const defaultState = {
         message: '',
     },
     userList: [],
+    userInfo: {
+        id: '',
+        name: '',
+        email: '',
+        password: '',
+        isAdmin: false
+    }
 };
 
 const userReducer = (prevState = defaultState, action) => {
@@ -45,7 +53,16 @@ const userReducer = (prevState = defaultState, action) => {
             return { ...prevState,
                 userList: [...prevState.userList, { name: payload }],
             }
-        };
+        }
+        case LOGIN_USER: {
+            localStorage.setItem('userInfo', JSON.stringify(payload))
+            return { ...prevState, userInfo: {
+                id: payload._id, 
+                name: payload.name,
+                email: payload.email,
+                isAdmin: !!payload.isAdmin
+            }}
+        }
         default: return prevState;
     }
 }

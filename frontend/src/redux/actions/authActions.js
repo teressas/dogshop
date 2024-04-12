@@ -2,7 +2,7 @@ import { USERS_URL, LOADING, SUCCESS, ERROR, LOGIN_USER } from '../constants';
 import { createAction } from '../store';
 
 
-export const authUser = (userData) => (dispatch) => {
+export const loginUser = (userData) => (dispatch) => {
     dispatch(createAction(LOADING, 'Sending user data'))
     fetch(`${USERS_URL}/auth/`, {
         method: 'POST',
@@ -18,4 +18,3 @@ export const authUser = (userData) => (dispatch) => {
     .catch(err => dispatch(createAction(ERROR, 'Issue sending data to server')))
 }
 
-export default authUser;
